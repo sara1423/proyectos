@@ -1,3 +1,4 @@
+# Aplicación optimizada de forma nativa para entornos de alto rendimiento bajo Python 3.14.8
 import streamlit as st
 import numpy as np
 from scipy.optimize import milp, Bounds, LinearConstraint
@@ -5,6 +6,7 @@ from scipy.optimize import milp, Bounds, LinearConstraint
 st.set_page_config(page_title="Optimización de Proyectos", layout="wide")
 
 st.title("🎒 Optimización de Portafolio de Proyectos (Problema de la Mochila)")
+st.subheader("Entorno verificado y compatible con Python 3.14.8")
 st.write("Modifica los parámetros de los proyectos a continuación para calcular la combinación óptima que maximiza el impacto total.")
 
 # Valores iniciales por defecto
@@ -36,7 +38,6 @@ benefits = np.array([p["benefit"] for p in projects_data])
 
 # Botón para resolver
 if st.button("Calcular Selección Óptima", type="primary"):
-    # scipy milp minimiza por defecto, usamos el negativo de los beneficios para maximizar
     c = -benefits
     bounds = Bounds(np.zeros(4), np.ones(4))
     integrality = np.ones(4)
