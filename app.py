@@ -1,4 +1,4 @@
-# Aplicación optimizada de forma nativa para entornos de alto rendimiento bajo Python 3.14.8
+# Aplicación ultra-optimizada para despliegues veloces en Streamlit Cloud con Python 3.14.8
 import streamlit as st
 import numpy as np
 from scipy.optimize import milp, Bounds, LinearConstraint
@@ -68,3 +68,4 @@ if st.button("Calcular Selección Óptima", type="primary"):
                 st.error(f"❌ **{projects_data[i]['name']}** (No seleccionado)")
     else:
         st.error(f"No se encontró una solución viable: {res.message}")
+
