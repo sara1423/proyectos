@@ -1,4 +1,4 @@
-# Configuración de dependencias optimizada para compatibilidad nativa con Python 3.14.8
-streamlit
-numpy
-scipy
+# Versiones estables fijadas para acelerar la descarga y compilación en uv / Python 3.14.8
+streamlit>=1.40.0
+numpy>=1.26.0
+scipy>=1.12.0
