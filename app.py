@@ -40,24 +40,24 @@ if st.button("Calcular Selección Óptima", type="primary"):
     c = -benefits
     bounds = Bounds(np.zeros(4), np.ones(4))
     integrality = np.ones(4)
-    
+
     # Restricción: Suma(costos * x) <= budget
     A = np.array([costs])
     constraint = LinearConstraint(A, -np.inf, budget)
-    
+
     res = milp(c=c, constraints=constraint, integrality=integrality, bounds=bounds)
-    
+
     st.header("Resultados de la Optimización")
     if res.success:
         x_opt = np.round(res.x)
         total_benefit = int(-res.fun)
         total_cost = int(np.sum(costs * x_opt))
-        
+
         # Mostrar métricas clave
         m1, m2 = st.columns(2)
         m1.metric("Impacto/Beneficio Máximo Total", f"{total_benefit} pts")
         m2.metric("Costo Total Utilizado", f"{total_cost} de {budget}")
-        
+
         # Mostrar proyectos seleccionados
         st.subheader("Proyectos Seleccionados:")
         for i, val in enumerate(x_opt):
