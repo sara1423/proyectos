@@ -1,3 +1,4 @@
+# Configuración de dependencias optimizada para compatibilidad nativa con Python 3.14.8
 streamlit
 numpy
 scipy
