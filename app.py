@@ -67,4 +67,3 @@ if st.button("Calcular Selección Óptima", type="primary"):
                 st.error(f"❌ **{projects_data[i]['name']}** (No seleccionado)")
     else:
         st.error(f"No se encontró una solución viable: {res.message}")
-
